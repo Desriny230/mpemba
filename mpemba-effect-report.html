@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高温物体更快降到目标温度？— 姆潘巴效应（Mpemba effect）跨体系实验证据数据报告</title>
+<meta name="description" content="姆潘巴效应（Mpemba effect）跨体系实验证据、原始数据与参考文献链接：水/冰、胶体、量子比特、颗粒气体、自旋玻璃、水合物与聚合物。">
+<meta name="theme-color" content="#070b16">
+<meta property="og:type" content="article">
+<meta property="og:title" content="姆潘巴效应跨体系实验证据数据报告（20 条证据 · 23 条文献）">
+<meta property="og:description" content="同一样品只改初始温度，谁先到目标温度？20 条记录、逐条标注原文出处与获取层级。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%23111'/><circle cx='11' cy='14' r='2.6' fill='%23fff'/><circle cx='21' cy='14' r='2.6' fill='%23fff'/></svg>">
+<style>
+  :root{
+    --bg:#070b16;
+    --bg2:#0c1224;
+    --panel:rgba(255,255,255,.045);
+    --panel-2:rgba(255,255,255,.075);
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.18);
+    --txt:#e8eefc;
+    --txt-dim:#a7b3ce;
+    --txt-mute:#7c88a6;
+    --cyan:#38bdf8;
+    --amber:#fbbf24;
+    --rose:#fb7185;
+    --emerald:#34d399;
+    --violet:#a78bfa;
+    --slate:#94a3b8;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+    --r:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 12% -8%, rgba(56,189,248,.20), transparent 60%),
+      radial-gradient(900px 520px at 88% 4%, rgba(167,139,250,.18), transparent 62%),
+      radial-gradient(700px 480px at 50% 100%, rgba(52,211,153,.10), transparent 65%),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 55%, #060a13 100%);
+    background-attachment:fixed;
+    color:var(--txt);
+    font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    font-size:16px;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:66px 0 34px;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(7,11,22,0) 55%,rgba(7,11,22,.92) 100%);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cyan);border:1px solid rgba(56,189,248,.35);
+    background:rgba(56,189,248,.09);padding:7px 14px;border-radius:999px;margin:0 0 20px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+  h1{
+    font-size:clamp(28px,4.6vw,50px);line-height:1.18;margin:0 0 14px;letter-spacing:-.02em;
+    background:linear-gradient(100deg,#ffffff 0%,#cfe4ff 42%,#8fd4ff 70%,#c4b5fd 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lede{font-size:clamp(15.5px,1.6vw,19px);color:var(--txt-dim);max-width:900px;margin:0 0 26px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0 0 6px}
+  .meta li{
+    font-size:13px;color:var(--txt-dim);background:var(--panel);
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .meta li b{color:var(--txt);font-weight:600}
+
+  /* ---------- VERDICT ---------- */
+  .verdict{
+    margin:30px 0 6px;border:1px solid var(--line-strong);border-radius:var(--r);
+    background:linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.028));
+    box-shadow:var(--shadow);padding:22px 24px;display:grid;gap:14px;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .vcell{padding:4px 8px 4px 0}
+  .vcell .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;display:block}
+  .vcell p{margin:0;font-size:14.2px;color:var(--txt-dim)}
+  .vcell p b{color:var(--txt)}
+  .tag-yes{color:var(--emerald)} .tag-no{color:var(--rose)} .tag-cond{color:var(--amber)}
+  @media(max-width:860px){.verdict{grid-template-columns:1fr}}
+
+  /* ---------- NAV ---------- */
+  nav.toc{
+    position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+    background:rgba(7,11,22,.78);border-bottom:1px solid var(--line);
+  }
+  nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:thin}
+  nav.toc a{
+    white-space:nowrap;font-size:13.5px;color:var(--txt-dim);padding:7px 13px;border-radius:999px;
+    border:1px solid transparent;transition:.18s;
+  }
+  nav.toc a:hover{color:var(--txt);background:var(--panel);border-color:var(--line);text-decoration:none}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:56px 0 10px;scroll-margin-top:70px}
+  h2{font-size:clamp(21px,2.5vw,29px);margin:0 0 8px;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+  h2 .num{
+    font-size:12.5px;color:var(--cyan);border:1px solid rgba(56,189,248,.35);background:rgba(56,189,248,.10);
+    border-radius:8px;padding:4px 9px;font-variant-numeric:tabular-nums;letter-spacing:.06em;flex:0 0 auto;
+  }
+  h3{font-size:17.5px;margin:26px 0 10px;color:#dce7ff}
+  .sub{color:var(--txt-mute);font-size:14px;margin:0 0 22px;max-width:940px}
+  p{margin:0 0 14px}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:0 0 16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.22);
+  }
+  .card h3{margin-top:0}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  ul.tight{margin:8px 0 0;padding-left:20px}
+  ul.tight li{margin-bottom:7px;color:var(--txt-dim)}
+  ul.tight li b{color:var(--txt)}
+
+  /* ---------- BADGES ---------- */
+  .badge{
+    display:inline-block;font-size:11.5px;line-height:1.5;padding:2.5px 9px;border-radius:999px;
+    border:1px solid;letter-spacing:.03em;white-space:nowrap;font-weight:600;
+  }
+  .b-support{color:#6ee7b7;border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.12)}
+  .b-against{color:#fda4af;border-color:rgba(251,113,133,.45);background:rgba(251,113,133,.12)}
+  .b-cond{color:#fcd34d;border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.12)}
+  .b-inverse{color:#c4b5fd;border-color:rgba(167,139,250,.45);background:rgba(167,139,250,.12)}
+  .b-theory{color:#cbd5e1;border-color:rgba(148,163,184,.45);background:rgba(148,163,184,.14)}
+  .acc{font-size:11px;padding:2px 8px;border-radius:6px;border:1px dashed var(--line-strong);color:var(--txt-mute);white-space:nowrap}
+  .a-full{color:#7dd3fc;border-color:rgba(56,189,248,.5)}
+  .a-abs{color:#fcd34d;border-color:rgba(251,191,36,.42)}
+  .a-snip{color:#fdba74;border-color:rgba(251,146,60,.42)}
+  .a-sec{color:#fda4af;border-color:rgba(251,113,133,.42)}
+  .a-meta{color:#94a3b8}
+
+  /* ---------- CHART ---------- */
+  .chart{margin:6px 0 6px}
+  .chart-row{margin-bottom:20px}
+  .chart-lab{display:flex;justify-content:space-between;font-size:13.5px;color:var(--txt-dim);margin-bottom:7px;gap:12px;flex-wrap:wrap}
+  .chart-lab b{color:var(--txt)}
+  .bars{display:grid;gap:7px}
+  .bar{display:flex;align-items:center;gap:12px}
+  .bar .who{width:150px;flex:0 0 auto;font-size:13px;color:var(--txt-mute)}
+  .bar .track{flex:1;height:26px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .bar .fill{height:100%;border-radius:8px 4px 4px 8px;display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-size:12.5px;font-weight:700;color:#06101f;min-width:52px}
+  .fill.hot{background:linear-gradient(90deg,#f97316,#fbbf24)}
+  .fill.cold{background:linear-gradient(90deg,#38bdf8,#60a5fa)}
+  .note{font-size:13px;color:var(--txt-mute);margin:6px 0 0}
+  @media(max-width:620px){.bar .who{width:96px;font-size:12px}}
+
+  /* ---------- TABLE ---------- */
+  .tablewrap{border:1px solid var(--line);border-radius:var(--r);overflow:auto;box-shadow:var(--shadow);background:rgba(9,14,26,.6)}
+  table{border-collapse:collapse;width:100%;min-width:1080px;font-size:13.4px}
+  thead th{
+    position:sticky;top:0;background:#131c33;color:#dbe6ff;text-align:left;padding:13px 14px;border-bottom:1px solid var(--line-strong);
+    font-weight:650;font-size:12.6px;letter-spacing:.04em;white-space:nowrap;z-index:2;
+  }
+  tbody td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top;color:var(--txt-dim)}
+  tbody tr:hover td{background:rgba(56,189,248,.055)}
+  tbody td:first-child{color:var(--cyan);font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap}
+  tbody td b{color:var(--txt)}
+  tbody td.num{font-variant-numeric:tabular-nums;color:#e5edff}
+  .refcell{white-space:nowrap}
+  table caption{caption-side:bottom;text-align:left;padding:12px 14px;color:var(--txt-mute);font-size:12.6px}
+
+  /* ---------- REFS ---------- */
+  ol.refs{padding-left:0;list-style:none;counter-reset:r;margin:0}
+  ol.refs li{
+    counter-increment:r;position:relative;padding:14px 16px 14px 56px;border:1px solid var(--line);
+    border-radius:12px;background:var(--panel);margin-bottom:10px;font-size:14px;color:var(--txt-dim);
+  }
+  ol.refs li::before{
+    content:"[" counter(r) "]";position:absolute;left:16px;top:14px;color:var(--cyan);
+    font-variant-numeric:tabular-nums;font-weight:650;font-size:13px;
+  }
+  ol.refs li .ttl{color:var(--txt);font-weight:600}
+  ol.refs li .links{margin-top:6px;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+  ol.refs li .doi{font-family:ui-monospace,Consolas,monospace;font-size:12.6px}
+  .refgroup{margin-top:26px}
+
+  /* ---------- MISC ---------- */
+  .kv{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:14px;margin:4px 0 0}
+  .kv dt{color:var(--txt-mute)} .kv dd{margin:0;color:var(--txt-dim)}
+  .callout{
+    border-left:3px solid var(--amber);background:rgba(251,191,36,.07);border-radius:0 12px 12px 0;
+    padding:14px 18px;margin:16px 0;font-size:14.2px;color:#f5e7c5;
+  }
+  .callout.rose{border-left-color:var(--rose);background:rgba(251,113,133,.07);color:#ffdfe4}
+  .callout.cyan{border-left-color:var(--cyan);background:rgba(56,189,248,.07);color:#d8ecff}
+  .callout b{color:#fff}
+  code{
+    font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:12.8px;
+    background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:#cfe4ff;
+  }
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0 60px;color:var(--txt-mute);font-size:13.2px}
+  .top{position:fixed;right:20px;bottom:20px;z-index:50;background:rgba(19,28,51,.9);border:1px solid var(--line-strong);
+       color:var(--txt-dim);border-radius:999px;padding:10px 16px;font-size:13px;backdrop-filter:blur(10px)}
+  .top:hover{text-decoration:none;color:#fff}
+  @media print{
+    body{background:#fff;color:#111}
+    nav.toc,.top{display:none}
+    .card,.verdict,.tablewrap,ol.refs li{box-shadow:none;border-color:#ddd;background:#fff}
+    h1{color:#111;-webkit-text-fill-color:#111}
+    tbody td,ol.refs li,.lede,.sub,.vcell p{color:#333}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Scientific Evidence · 快速证据景观 + 实验数据提取</span>
+    <h1>“温度更高的同一物体，<br>更快降到目标温度”——真的吗？</h1>
+    <p class="lede">
+      这就是被讨论了 2300 年的<strong>姆潘巴效应（Mpemba effect）</strong>：在其它条件完全相同时，初始温度更高的样品反而更快冷却/凝固到目标状态。
+      本报告不做结论先行，而是把<strong>可核查的实验数据</strong>按体系（水/冰、胶体、量子比特、颗粒气体、自旋玻璃、水合物、聚合物、磁性氧化物）逐条列出，
+      并标注每条数据对应的<strong>原始文献链接与获取层级</strong>。
+    </p>
+    <ul class="meta">
+      <li>任务模式：<b>证据景观 + 结构化数据表</b>（非系统综述）</li>
+      <li>检索日期：<b>2026-09-17</b></li>
+      <li>评估记录：<b>20 条</b>｜来源链接：<b>23 条</b></li>
+      <li>检索：AnySearch（web + academic 垂直检索 + 全文抽取 + Crossref/OpenAlex 元数据核对）</li>
+      <li>全文可达：<b>7 条</b>｜摘要级：<b>8 条</b>｜转述/片段/元数据：<b>5 条</b></li>
+    </ul>
+
+    <div class="verdict">
+      <div class="vcell">
+        <span class="tag tag-cond">在水/冰体系</span>
+        <p><b>不支持。</b>在“同一样品、仅初始温度不同、冷却到 0 °C”的严格判据下，受控实验给出否定结论，且历史观测无法重复；文献中被当作证据的数据，用<b>1 cm 测温高度误差</b>就能复现出来。</p>
+      </div>
+      <div class="vcell">
+        <span class="tag tag-yes">在受控非平衡体系</span>
+        <p><b>确有实证。</b>胶体颗粒（Nature 2020）、单个囚禁离子（PRL 2024、Nat Commun 2025）、超导量子处理器、颗粒气体与自旋玻璃模拟、聚乳酸结晶、相分离锰氧化物等体系中，效应被可重复观测，并有“<b>强姆潘巴</b>”即指数级加速的形式。</p>
+      </div>
+      <div class="vcell">
+        <span class="tag tag-no">不是“温度越高越快”</span>
+        <p><b>条件性极强。</b>它不是关于温度的单调规律：需要特定的初始态（与最慢衰减模态的投影接近零）、各向异性驱动或未跨越相变的淬火；在极高温（胶体 α=9）或较高初始温度（THF 水合物）下效应会<b>消失甚至反向</b>。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#definition">0 · 定义分歧</a>
+    <a href="#water">1 · 水的数据</a>
+    <a href="#matrix">2 · 证据矩阵</a>
+    <a href="#systems">3 · 分体系数据</a>
+    <a href="#mechanism">4 · 机制</a>
+    <a href="#pitfalls">5 · 方法学陷阱</a>
+    <a href="#gaps">6 · 缺口与复现方案</a>
+    <a href="#limits">7 · 覆盖范围</a>
+    <a href="#refs">8 · 参考文献</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ 0 ============ -->
+<section id="definition">
+  <h2><span class="num">§0</span>先解决定义分歧：三种“更快”会得到三种结论</h2>
+  <p class="sub">用户提出的说法“相同物体温度高时比温度低时更快降温到目标温度”，在文献中至少对应三个互不等价的判据。定义不统一，正是姆潘巴效应长期争议的核心原因。</p>
+  <div class="grid3">
+    <div class="card">
+      <h3>定义 A · 冷却到目标温度</h3>
+      <p style="font-size:14.2px">两个样品除初始温度外完全一致，比较达到同一“目标温度”（如水的 0 °C）所需时间。</p>
+      <p style="font-size:13.6px;color:var(--txt-mute);margin:0">👉 这是用户说法的字面含义。<b style="color:var(--rose)">这是 Burridge &amp; Linden (2016) 严格检验并被否定的判据</b>（水体系）。</p>
+    </div>
+    <div class="card">
+      <h3>定义 B · 开始结冰（onset）</h3>
+      <p style="font-size:14.2px">比较“出现第一个冰晶/凝固开始”的时刻，即 Mpemba &amp; Osborne (1969) 的原始判据。</p>
+      <p style="font-size:13.6px;color:var(--txt-mute);margin:0">👉 受<b>超冷（supercooling）</b>随机性支配，重复性最差；多数严格实验在此判据下看到的是“无证据”。</p>
+    </div>
+    <div class="card">
+      <h3>定义 C · 完全凝固 / 达到冰层厚度</h3>
+      <p style="font-size:14.2px">比较完全冻实或冰层生长到指定厚度的时间。</p>
+      <p style="font-size:13.6px;color:var(--txt-mute);margin:0">👉 相变潜热约等于把水从 80 °C 冷到 0 °C 的能量，因此对初始温度<b>本应不敏感</b>；Vynnycky &amp; Kimura (2015) 仅 21 组配对中有 1 组出现反转迹象。</p>
+    </div>
+  </div>
+  <div class="callout cyan">
+    <b>读这份报告的正确姿势：</b>任何“姆潘巴效应存在/不存在”的说法，都必须附带<strong>判据（A/B/C）、体系、初始温度对、容器几何与测温位置</strong>。脱离这四项的结论无法在文献之间比较。
+  </div>
+</section>
+
+<!-- ============ 1 ============ -->
+<section id="water">
+  <h2><span class="num">§1</span>水与冰：原始数据与它的复现失败</h2>
+  <p class="sub">水体系中我实际取到了两组可直接比较的“热/冷”时间数据。下图为文献报告值（单位：分钟），数据来源与获取层级见每行右侧标注。</p>
+
+  <div class="card chart">
+    <h3>数据集 1 — Mpemba &amp; Osborne (1969)：制冷装置内、同体积水、到冻结点</h3>
+    <div class="chart-row">
+      <div class="bars">
+        <div class="bar"><span class="who">初始 90 °C（热）</span><span class="track"><span class="fill hot" style="width:30%">30 min</span></span></div>
+        <div class="bar"><span class="who">初始 20 °C（冷）</span><span class="track"><span class="fill cold" style="width:100%">100 min</span></span></div>
+      </div>
+      <p class="note">热样在 30 min 到达冻结点，冷样需 100 min ⇒ 按此数据计算平均传热速率相差约 <b>15 倍</b>。
+        获取层级：<span class="acc a-sec">二手转述</span>（数值转述自开放获取论文 Burridge &amp; Linden 2016；原始 1969 全文未获取）。该数据集后被同文作者明确列为“可能根本有误”。</p>
+    </div>
+
+    <h3 style="margin-top:26px">数据集 2 — Vynnycky &amp; Kimura (2015)：10 °C 与 15 °C 配对、冰层生长到 25 mm</h3>
+    <div class="chart-row">
+      <div class="bars">
+        <div class="bar"><span class="who">初始 15 °C（热）</span><span class="track"><span class="fill hot" style="width:90.5%">≈95 min</span></span></div>
+        <div class="bar"><span class="who">初始 10 °C（冷）</span><span class="track"><span class="fill cold" style="width:100%">≈105 min</span></span></div>
+      </div>
+      <p class="note">热量降低但差异很小，且<b>离散度足以吞掉结论</b>：15 °C 组各次试验范围 95–105 min，10 °C 组范围 100–110 min（在 5 mm 高度记录）。
+        以“固化开始时间”为判据时该研究<b>无姆潘巴证据</b>；21 组初始温度配对中仅此 1 组在冰层厚度判据下出现反转迹象。
+        获取层级：<span class="acc a-sec">二手转述</span>（数值转述自 Burridge &amp; Linden 2016）。</p>
+    </div>
+
+    <h3 style="margin-top:26px">为什么这两组数据不能相加</h3>
+    <ul class="tight">
+      <li>判据不同：数据集 1 是“到达冻结点”，数据集 2 是“冰层长到 25 mm”。</li>
+      <li>初始温度对不同：90/20 °C 与 15/10 °C 是两种完全不同的热力学距离。</li>
+      <li>容器与冷却方式不同：几何、绝热方式、冷却环境温度均会改变高瑞利数对流的量级。</li>
+    </ul>
+  </div>
+
+  <h3>决定性的否定证据：Burridge &amp; Linden (2016, Scientific Reports)</h3>
+  <div class="card">
+    <dl class="kv">
+      <dt>设计</dt><dd>同一样品除初始温度外完全相同，冷却到 0 °C；另设避免结冰的“第二类实验”，在样品不同高度同时测温。</dd>
+      <dt>样本与装置</dt><dd>自建受控冷却装置（多组高度温度测量）+ 对历史文献数据的统一无量纲再分析（Grashof / Prandtl / Rayleigh 数标度）。</dd>
+      <dt>关键结果 1</dt><dd>未观察到任何可合理称为姆潘巴效应的物理效应；除单一历史数据集外的所有文献观测点仅<b>略高于</b>“姆潘巴线” <code>Q_H/Q_C = ΔE_H/ΔE_C</code>。</dd>
+      <dt>关键结果 2（反证强度最高）</dt><dd>如果测温点的<b>垂直高度误差仅 1 cm</b>，就会产生落在“姆潘巴区”的虚假观测——而该区域恰好覆盖了所有他研究中报告的效应。</dd>
+      <dt>关键结果 3</dt><dd>数据整体与高瑞利数对流标度预测吻合：冷却时间随初始温度上升，因此作者判定“在更高瑞利数下也不会出现效应”。</dd>
+      <dt>作者结论</dt><dd>在其判据下，姆潘巴效应“不是真实的物理效应”，是科学上的谬误（scientific fallacy）；唯一例外的 Mpemba &amp; Osborne 数据集无法解释、无法复现，应视为错误数据。</dd>
+      <dt>获取层级</dt><dd><span class="acc a-full">全文</span> <a href="https://www.nature.com/articles/srep37665">nature.com/articles/srep37665</a></dd>
+    </dl>
+  </div>
+
+  <div class="callout rose">
+    <b>同时必须公平呈现的另一面：</b>Auerbach (1995) 的近壁测温显示“初始较热的水确实可能更早开始结冰”，且热水过冷程度更小；Brownridge (2011) 观察到热水比冷水早约 15 min 结冰的案例。两者的共同点是：<b>都被作者解释为超冷行为的差异，而非“更快的整体冷却”</b>。这两篇的全文在本轮检索中不可达，属摘要/片段级证据。
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="matrix">
+  <h2><span class="num">§2</span>证据矩阵：20 条记录的标准化提取</h2>
+  <p class="sub">
+    方向列含义：<span class="badge b-support">支持</span> 观察到焦热更快 ·
+    <span class="badge b-against">反对</span> 否证或判定为假象 ·
+    <span class="badge b-cond">条件性</span> 仅特定条件成立/不稳健 ·
+    <span class="badge b-inverse">反向</span> 反向姆潘巴（冷者更快）或高温反而更慢 ·
+    <span class="badge b-theory">理论</span> 非实验。
+    获取层级：<span class="acc a-full">全文</span> <span class="acc a-abs">摘要</span> <span class="acc a-snip">检索片段</span> <span class="acc a-sec">二手转述</span> <span class="acc a-meta">元数据</span>
+  </p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>表 1 · 姆潘巴效应跨体系证据矩阵（19 条实验/数值记录 + 1 条理论记录；检索日期 2026-09-17）</caption>
+      <thead>
+        <tr>
+          <th>ID</th><th>体系</th><th>类型</th><th>关键条件</th><th>测量量</th><th>原文关键数据</th><th>方向</th><th>获取层级</th><th>来源</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>E01</td><td><b>水/冰</b></td><td>实验 1969</td><td>同体积水入冰箱；90 °C vs 20 °C</td><td>到达冻结点时间</td>
+          <td class="num">热样 30 min；冷样 100 min（平均传热速率差 ≈15×）</td>
+          <td><span class="badge b-cond">支持（后被质疑）</span></td><td><span class="acc a-sec">二手转述</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1088/0031-9120/4/3/312">Phys. Educ. 4:172</a></td>
+        </tr>
+        <tr>
+          <td>E02</td><td><b>水/冰</b></td><td>实验 1995</td><td>容器壁附近测温</td><td>开始结冰、过冷度</td>
+          <td>热水可能更早开始结冰；热水过冷程度更小</td>
+          <td><span class="badge b-cond">条件性支持</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1119/1.18059">Am. J. Phys. 63:882</a></td>
+        </tr>
+        <tr>
+          <td>E03</td><td><b>水/冰</b></td><td>实验 2011</td><td>多种容器/冷却配置搜索效应</td><td>结冰先后与时间差</td>
+          <td>某配置下热水早约 15 min 冻结；作者判定<b>不算</b>姆潘巴效应（冷水先到 0 °C，若不超冷应先结冰）</td>
+          <td><span class="badge b-against">不支持</span></td><td><span class="acc a-snip">摘要+片段</span></td>
+          <td class="refcell"><a href="https://pubs.aip.org/aapt/ajp/article/79/1/78/1041776/When-does-hot-water-freeze-faster-then-cold-water">Am. J. Phys. 79:78</a></td>
+        </tr>
+        <tr>
+          <td>E04</td><td><b>水/冰</b></td><td>实验 2015</td><td>21 组温度配对；冰层 25 mm</td><td>冰层生长时间</td>
+          <td class="num">15 °C 组 ≈95 min（95–105）；10 °C 组 ≈105 min（100–110）；开始固化判据下无效应</td>
+          <td><span class="badge b-cond">弱支持但不稳健</span></td><td><span class="acc a-sec">二手转述</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2014.09.015">Int. J. Heat Mass Transf. 80:243</a></td>
+        </tr>
+        <tr>
+          <td>E05</td><td><b>水/冰</b></td><td>受控实验 + 文献再分析 2016</td><td>除初始温度外完全一致；冷却到 0 °C</td><td>t₀、Q_H/Q_C、Ra_T 标度</td>
+          <td>无可合理描述的姆潘巴效应；<b>1 cm 测温高度误差</b>即可伪造出“效应”；数据与高瑞利数对流标度预测吻合</td>
+          <td><span class="badge b-against">反对</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://www.nature.com/articles/srep37665">Sci. Rep. 6:37665</a></td>
+        </tr>
+        <tr>
+          <td>E06</td><td><b>水/冰</b></td><td>最小偏倚复现 2020</td><td>给出姆潘巴效应的操作定义</td><td>冷却/结冰时间</td>
+          <td>全文三次抽取均 403 失败 → <b>本报告不引用其定量结论</b></td>
+          <td><span class="badge b-theory">未评估</span></td><td><span class="acc a-meta">元数据</span></td>
+          <td class="refcell"><a href="https://royalsocietypublishing.org/doi/10.1098/rspa.2019.0829">Proc. R. Soc. A 476:20190829</a></td>
+        </tr>
+        <tr>
+          <td>E07</td><td><b>胶体颗粒</b>（水中布朗粒子+反馈光镊）</td><td>受控实验 2020</td><td>势阱不对称度 α=1/3/9；热淬火；数千次重复</td><td>平衡时间 t_eq(初始温度)</td>
+          <td class="num">α=1：单调上升，<b>无效应</b>；α=3：初始温度 &gt;10 后下降，<b>出现效应</b>；α=9：中温出现、极高温消失；t_eq ≲0.1 s；a₂=0 时衰减由 λ₃&gt;λ₂ 主导 ⇒ 指数级加速</td>
+          <td><span class="badge b-support">支持（可重复）</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://arxiv.org/html/2008.02373v1">arXiv:2008.02373</a> · <a href="https://doi.org/10.1038/s41586-020-2560-x">Nature 584:64</a></td>
+        </tr>
+        <tr>
+          <td>E08</td><td><b>胶体颗粒</b></td><td>受控实验 2022</td><td>设计能量景观使冷体系升温更快</td><td>升温时间</td>
+          <td>可使冷体系升温显著更快（异常加热 / 反向姆潘巴）</td>
+          <td><span class="badge b-inverse">反向效应</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1073/pnas.2118484119">PNAS 119:e2118484119</a></td>
+        </tr>
+        <tr>
+          <td>E09</td><td><b>单个 ⁸⁸Sr⁺ 离子量子比特</b></td><td>量子实验 2024</td><td>γ′_i = 0.116（冷）vs 0.776（热），淬火到同一末态</td><td>弛豫轨迹交叉/到达末态先后</td>
+          <td class="num">冷体系（0.116）更快到达热末态 ⇒ 反向姆潘巴；强效应仅在量子比特足够相干时存在：α &gt; 1/2 + 1/γ′_f</td>
+          <td><span class="badge b-inverse">反向效应（支持）</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://arxiv.org/abs/2401.05830">arXiv:2401.05830</a> · <a href="https://doi.org/10.1103/PhysRevLett.133.010403">PRL 133:010403</a></td>
+        </tr>
+        <tr>
+          <td>E10</td><td><b>单个囚禁离子（qutrit）</b></td><td>量子实验 2025</td><td>构造与最慢衰减模态（SDM）重叠为零的最优初态</td><td>弛豫距离衰减速率</td>
+          <td>sME 初态使弛豫<b>指数级加速</b>；条件与 Liouvillian 例外点（本征值/本征模合并）重合</td>
+          <td><span class="badge b-support">支持（强姆潘巴）</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://www.nature.com/articles/s41467-024-54303-0">Nat. Commun. 16:301</a></td>
+        </tr>
+        <tr>
+          <td>E11</td><td><b>超导量子处理器</b></td><td>量子实验 2025/2026</td><td>全连通可调耦合；不同初始对称破缺程度</td><td>对称性恢复动力学</td>
+          <td>实现量子姆潘巴效应的观测与调制：初始对称破缺越大，对称性恢复越快</td>
+          <td><span class="badge b-support">支持（量子）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://arxiv.org/abs/2508.07707">arXiv:2508.07707</a></td>
+        </tr>
+        <tr>
+          <td>E12</td><td><b>自旋玻璃</b>（Janus II 数值实验）</td><td>数值实验 2019</td><td>热/冷副本淬火到同一热浴；热浴温度在玻璃相内</td><td>内能与相干长度 ξ</td>
+          <td>效应由非平衡老化动力学支配、与 ξ 强关联；<b>无需</b>热协议跨越 T_c，热浴处于玻璃相即可</td>
+          <td><span class="badge b-support">支持（数值）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1073/pnas.1819803116">PNAS 116:15350</a> · <a href="https://arxiv.org/abs/1804.07569">arXiv:1804.07569</a></td>
+        </tr>
+        <tr>
+          <td>E13</td><td><b>颗粒流体</b></td><td>理论 + MD/MC 2017</td><td>均匀加热与自由冷却；两组初始温度淬火</td><td>温度弛豫曲线与交叉</td>
+          <td>两类情形均存在效应；给出“需要多大初始制备差异”的定量预测并被模拟证实</td>
+          <td><span class="badge b-support">支持（数值）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1103/PhysRevLett.119.148001">PRL 119:148001</a></td>
+        </tr>
+        <tr>
+          <td>E14</td><td><b>各向异性驱动颗粒气体</b>（二维硬盘）</td><td>理论 + 事件驱动 MD 2021</td><td>初态为稳态；P(100.5, 28) vs Q(100.4, 20.01) → (100, 28.2)；MD：P(61.0, 17.08) vs Q(60.7, −10.0) → (58.0, 16.23)</td><td>温度弛豫交叉时间 τ</td>
+          <td class="num">理论与 MD 吻合；强效应例 (100.21, 32.34) vs (100.11, 30.0) 中<b>更热者指数级更快</b>；恢复系数 r→1（弹性）时效应消失</td>
+          <td><span class="badge b-support">支持（理论+数值）</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://arxiv.org/html/2104.08730v1">arXiv:2104.08730</a></td>
+        </tr>
+        <tr>
+          <td>E15</td><td><b>La₀.₅Ca₀.₅MnO₃ 锰氧化物</b></td><td>材料实验（预印本）</td><td>冷却历史 H_Cool = 1/3/6 T；等温弛豫</td><td>磁化强度 M 的“超车”温度/时间</td>
+          <td class="num">C6T 与 C3T 在 40.5 K 相等、C6T 超车；C6T 与 C1T 在 56 K 相等；52.5 K 下约 <b>35 min</b> 后 C6T 超越 C1T；R_NE 由 ≈0.17（H=0）升至 ≈0.90（H=6 T）</td>
+          <td><span class="badge b-support">支持（材料实验）</span></td><td><span class="acc a-full">全文（预印本）</span></td>
+          <td class="refcell"><a href="https://arxiv.org/abs/1011.3598">arXiv:1011.3598</a></td>
+        </tr>
+        <tr>
+          <td>E16</td><td><b>水（TIP4P/Ice 模型）+ LJ 模型</b></td><td>MD 模拟 2025</td><td>水：T_s = 400 K 淬火到 T_f = 230 K；LJ：淬火到 T_f = 0.2（约化单位）；另含 Potts 模型</td><td>PE 跳变时间 / 交叉时间 t_c</td>
+          <td class="num">两类模型均显示<b>更高初始温度构型更早凝固</b>；LJ 的 t_c,ℓ 随 T_s 下降并与初始关联长度 ξ 相关；水与 LJ 机制不同</td>
+          <td><span class="badge b-support">支持（模拟）</span></td><td><span class="acc a-full">全文</span></td>
+          <td class="refcell"><a href="https://www.nature.com/articles/s42005-025-02251-6">Commun. Phys. 8 (2025)</a></td>
+        </tr>
+        <tr>
+          <td>E17</td><td><b>THF 笼形水合物</b></td><td>实验 2016</td><td>不同初始温度下形成水合物</td><td>形成时间</td>
+          <td>较低初始温度下出现姆潘巴效应；<b>更高初始温度下形成时间被推迟</b></td>
+          <td><span class="badge b-inverse">方向反转</span></td><td><span class="acc a-snip">检索片段</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1007/s11814-016-0029-2">Kor. J. Chem. Eng. 33:1903</a></td>
+        </tr>
+        <tr>
+          <td>E18</td><td><b>聚乳酸 PLA 结晶</b></td><td>材料实验 2018</td><td>从“热”/“冷”态分别淬火</td><td>结晶速率</td>
+          <td>从“热”态淬火的样品结晶更快；归因于温度依赖的链构象与受限效应</td>
+          <td><span class="badge b-support">支持（材料实验）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1021/acs.cgd.8b01250">Cryst. Growth Des. 18:5757</a></td>
+        </tr>
+        <tr>
+          <td>E19</td><td><b>一般马尔可夫系统</b>（Ising、扩散、三态）</td><td>理论 2017</td><td>定义到平衡态的距离，给出充分条件</td><td>弛豫时间</td>
+          <td>提出马尔可夫姆潘巴效应的普适机制与充分条件；并预测加热过程中的反向效应</td>
+          <td><span class="badge b-theory">理论（非实验）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1073/pnas.1701264114">PNAS 114:5083</a></td>
+        </tr>
+        <tr>
+          <td>E20</td><td><b>马尔可夫动力学一般框架</b></td><td>理论 2019</td><td>Mpemba 指数；慢模态系数为零</td><td>弛豫时间跳变</td>
+          <td>强姆潘巴下弛豫时间跳变至更小值 ⇒ 指数级更快平衡；Mpemba 指数的奇偶性是系统拓扑性质</td>
+          <td><span class="badge b-theory">理论（非实验）</span></td><td><span class="acc a-abs">摘要</span></td>
+          <td class="refcell"><a href="https://doi.org/10.1103/PhysRevX.9.021060">Phys. Rev. X 9:021060</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:12px">
+    注：E01–E05 与 E17 的数值来自原论文或开放获取论文的转述/摘要，未由本报告二次测量；E06 因全文不可达而刻意留空，不作方向判定。
+    表格中“初始温度 &gt;10”沿用原论文的无量纲温标，未换算为摄氏度；E14 的降温曲线参数按 arXiv HTML 抽取文本原样转录（该渲染版本在图注中对部分数字存在重复标记，未做推断性修正）。
+  </p>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="systems">
+  <h2><span class="num">§3</span>分体系速览：效应在哪里真实存在</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>🧊 水与冰 <span class="badge b-against">证据不支持</span></h3>
+      <ul class="tight">
+        <li><b>受控实验（全文级）</b>：冷却到 0 °C 无效应，文献数据服从高瑞利数对流标度。</li>
+        <li><b>反证关键</b>：1 cm 测温高度误差即可伪造效应，正好覆盖既往“阳性”结果。</li>
+        <li><b>不可复现的例外</b>：1969 年原始数据集（30 vs 100 min）从未被后续复现到同等量级。</li>
+        <li><b>仍有争议的边界</b>：含结冰全程、超冷随机性、蒸发与溶解气体影响的条件下，判据与重复性仍不统一。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔵 胶体颗粒 <span class="badge b-support">证据支持（最干净）</span></h3>
+      <ul class="tight">
+        <li>光镊反馈势阱中单个布朗粒子，数千次重复，可精确重构非平衡态分布。</li>
+        <li>效应<b>依赖势阱形状</b>：对称势阱无效应，非对称势阱出现；极高温下再度消失。</li>
+        <li>与 Fokker–Planck 本征函数展开的理论定量吻合 ⇒ 机制可解释，而非测量噪声。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚛️ 量子比特 <span class="badge b-support">证据支持</span> <span class="badge b-inverse">含反向</span></h3>
+      <ul class="tight">
+        <li>单个 ⁸⁸Sr⁺ 离子：<b>反向</b>姆潘巴（冷者先到热末态），且强效应要求量子比特足够相干（α 阈值）。</li>
+        <li>囚禁离子 qutrit：构造与最慢衰减模态正交的初态 ⇒ 弛豫指数级加速，并与 Liouvillian 例外点重合。</li>
+        <li>超导量子处理器：可调耦合下实现量子姆潘巴效应的观测与调制。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🌪️ 颗粒气体与自旋玻璃 <span class="badge b-support">数值支持</span></h3>
+      <ul class="tight">
+        <li>颗粒气体：均匀加热与自由冷却均出现效应；<b>各向异性驱动</b>是关键，弹性碰撞下效应消失。</li>
+        <li>自旋玻璃：效应与自旋玻璃相干长度 ξ 绑定，是“处于玻璃相”的可靠判据；无需跨越 T_c。</li>
+        <li>这类证据属数值实验，不能替代实物实验，但提供了严格可控的参数扫描。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🧬 水合物 / 聚合物 / 磁性氧化物 <span class="badge b-cond">混合</span></h3>
+      <ul class="tight">
+        <li>THF 水合物：低温出现、<b>高温反而延迟</b> ⇒ 说明“越热越快”不成立为普遍规律。</li>
+        <li>聚乳酸：从“热”态淬火结晶更快（真实材料实验，凝聚态意义上的姆潘巴）。</li>
+        <li>La₀.₅Ca₀.₅MnO₃：冷却历史不同的磁化强度曲线出现“超车”；属磁相分离与成核动力学效应。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📐 理论 <span class="badge b-theory">非实验</span></h3>
+      <ul class="tight">
+        <li>马尔可夫姆潘巴效应：以“到平衡态的距离”表述，给出充分条件，并预言反向效应。</li>
+        <li>Mpemba 指数与强姆潘巴：慢模态系数为零时弛豫时间跳变，出现指数级加速；其奇偶性具有拓扑性质。</li>
+        <li>理论的价值在于<b>解释“为什么在有些体系里可行、在水里却看不到”</b>：需要初始态与慢模态的特殊关系。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="mechanism">
+  <h2><span class="num">§4</span>机制：为什么“更热反而更快”在物理上并非不可能</h2>
+  <p class="sub">以下机制在文献中被提出并（部分）被实验检验。注意：机制存在 ≠ 水体系中该效应已成立。</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>1 · 慢模态投影消失（现代主流解释）</h3>
+      <p style="font-size:14.2px">把非平衡态按动力学模态展开：<code>p(x,t) ≈ π(x) + a₂ e^(−λ₂t) v₂(x)</code>。若热初始态的系数 <code>a₂</code> 恰好接近/等于 0，衰减就由更快的 λ₃ 主导 ⇒ 平衡时间骤降，即“强姆潘巴效应”。这正是胶体实验与囚禁离子实验中直接测到的量。</p>
+    </div>
+    <div class="card">
+      <h3>2 · 蒸发（水的经典候选）</h3>
+      <p style="font-size:14.2px">热水蒸发带走质量与潜热，剩下需要冻结的水更少。文献指出：只有当蒸发满足特定条件时才足以解释效应，且它改变的是“剩余质量”而非“单位质量冷却速率”。</p>
+    </div>
+    <div class="card">
+      <h3>3 · 对流与几何（水的主要混淆源）</h3>
+      <p style="font-size:14.2px">热水产生更强浮力对流，改变有效换热面积与温度分层。这正是“测温位置差 1 cm 就能翻转结论”的物理根源：样品内部本身有温度梯度，测同一高度才可比。</p>
+    </div>
+    <div class="card">
+      <h3>4 · 超冷与溶解气体（结冰判据的随机源）</h3>
+      <p style="font-size:14.2px">结冰起始由成核随机性支配，受容器表面、杂质、溶解气体影响。多个“阳性”观测可用“冷样超冷更深”来解释 ⇒ 定义 B（开始结冰）天生重复性差。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="pitfalls">
+  <h2><span class="num">§5</span>方法学陷阱：为什么“重复实验”经常各说各话</h2>
+  <div class="card">
+    <ul class="tight">
+      <li><b>测温位置未报告或未对齐</b>：样品内部存在垂直温度梯度，热水与冷水的梯度不同 ⇒ 不同高度读数会产生虚假交叉。</li>
+      <li><b>蒸发未被控制或计量</b>：热水在降温途中质量减少，若只用“时间”比较而不核对剩余质量，比较对象已不同。</li>
+      <li><b>几何与绝热方式不匹配</b>：容器长宽比与底部是否绝热会改变对流强度量级（D/H 在研究间相差可达 15 倍）。</li>
+      <li><b>样本量与离散度</b>：如 E04 中 15 °C 组单次试验 95–105 min，而组均值差仅约 10 min ⇒ 均值层面的“效应”被离散度吞没。</li>
+      <li><b>判据混用</b>：开始结冰 / 到 0 °C / 完全冻实三种判据不可互换；混用即产生“文献矛盾”的假象。</li>
+      <li><b>预印本与经同行评议版本混用</b>：本报告对 E15（预印本）等已单独标注，请勿与期刊论文等同引用。</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <b>对本报告自身的提醒：</b>这是单一分析者、单一检索引擎完成的证据景观，<b>不是</b>系统综述。7 条记录仅有摘要级/片段级证据，其中 E01、E04、E17 的关键数字甚至来自他人转述 —— 若要用作强结论，必须回到原文核对。
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="gaps">
+  <h2><span class="num">§6</span>尚未解决的关键问题与可执行的复现方案</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>关键缺口</h3>
+      <ul class="tight">
+        <li><b>水的“干净”复现缺失</b>：缺少在大样本、分量控制（质量、几何、测温高度）下报告置信区间的冷却实验。</li>
+        <li><b>机制的体系迁移性不明</b>：胶体/量子体系的“慢模态”机制能否定量解释水的异常，仍无实验证据。</li>
+        <li><b>结冰全程的判据未标准化</b>：缺乏统一的“目标温度 + 目标相变度”双重终点定义。</li>
+        <li><b>材料体系可复现性</b>：水合物（E17）与聚合物（E18）结论方向不一致，样本量小、体系差异大。</li>
+        <li><b>负结果发表偏倚</b>：阳性观测更容易被报道与传播，而否定性复现（如 E05）传播力弱。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>建议的最小可复现实验（水）</h3>
+      <ul class="tight">
+        <li><b>样品对</b>：同一批次去离子水，质量配平至 ±0.01 g；初始温度对建议 80/20 °C 与 40/20 °C 各做 20 次配对。</li>
+        <li><b>测温</b>：每容器 ≥3 个高度热电偶（如 5/15/25 mm），同高度比较；报告高度不确定度（目标 &lt;2 mm）。</li>
+        <li><b>几何</b>：同一容器、同一绝热方案；报告 D/H 与底部边界条件。</li>
+        <li><b>终点</b>：预注册双终点 ——(1) 达到 0 °C 等焓温度；(2) 冰层达指定厚度。</li>
+        <li><b>统计</b>：以配对差值的中位数与自助法置信区间判定；报告离散度而非仅均值差。</li>
+        <li><b>预注册</b>：在上线前锁定判据、样本量与排除规则，避免“看着曲线找效应”。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="limits">
+  <h2><span class="num">§7</span>覆盖范围、不可达来源与可信度声明</h2>
+  <div class="card">
+    <dl class="kv">
+      <dt>任务性质</dt><dd>快速证据景观 + 结构化数据提取（rapid evidence landscape）。<b>不是</b>系统综述：无预注册协议、无双人独立筛选、无盲法数据提取。</dd>
+      <dt>检索覆盖</dt><dd>通用 Web 检索 + academic 垂直检索（OpenAlex/S2 类元数据 + Crossref 元数据核对）。未检索 Web of Science / Scopus / Embase / CNKI 等付费或中文索引。</dd>
+      <dt>时间覆盖</dt><dd>无时间下限；实际检出的实验记录跨 1969–2026 年，其中 2024–2026 年的量子体系记录为主动检索所得。</dd>
+      <dt>引文追踪</dt><dd>未做系统化前向/后向引文追踪；部分条目由被引文献列表被动发现（如 E04、E13）。</dd>
+      <dt>不可达来源</dt><dd>E06（Proc. R. Soc. A 2020，HTTP 403）、E03 与 E02 全文（AIP 抽取失败/0 字节）、E17 全文（Springer 反爬）、1969 年原始论文全文。上述条目按摘要/片段/转述降级使用，并在矩阵中逐条标注。</dd>
+      <dt>数字准确性</dt><dd>所有数值均取自本轮抽取到的文本（原文正文/摘要或开放获取论文的转述），未做单位换算推断，未从图中目测读数。若某数字无法从可及文本确认，矩阵中留空或标注“未获取”。</dd>
+      <dt>领域限定</dt><dd>本报告为科研文献信息整理，不构成工程或医疗建议；涉及具体冷却装置设计或临床相关应用时需另行专家复核。</dd>
+      <dt>复现方式</dt><dd>见同目录 <code>search-log.md</code>（逐条查询与抽取结果）、<code>evidence-matrix.csv</code>（结构化表）、<code>references.md</code>（书目与获取层级）、<code>sources/</code>（原始抽取文本）。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="refs">
+  <h2><span class="num">§8</span>参考文献（含稳定标识与获取层级）</h2>
+  <p class="sub">
+    <span class="acc a-full">全文</span> 实际抽取到正文 ·
+    <span class="acc a-abs">摘要</span> 仅摘要/摘要页 ·
+    <span class="acc a-snip">检索片段</span> 仅搜索摘要片段 ·
+    <span class="acc a-sec">二手转述</span> 原始全文不可达，数据经开放获取论文转述 ·
+    <span class="acc a-meta">元数据</span> 仅书目信息
+  </p>
+
+  <div class="refgroup">
+    <h3>A. 水与冰（核心争议区）</h3>
+    <ol class="refs">
+      <li>
+        <span class="ttl">Mpemba EB, Osborne DG.</span> <i>Cool?</i> Physics Education <b>4</b>(3):172–175 (1969).
+        <div class="links"><a class="doi" href="https://doi.org/10.1088/0031-9120/4/3/312">DOI 10.1088/0031-9120/4/3/312</a><span class="acc a-sec">二手转述</span><span class="note">原始全文未获取；30/100 min 数据经文献 5 转述</span></div>
+      </li>
+      <li>
+        <span class="ttl">Auerbach D.</span> <i>Supercooling and the Mpemba effect: When hot water freezes quicker than cold.</i> American Journal of Physics <b>63</b>(10):882–885 (1995).
+        <div class="links"><a class="doi" href="https://doi.org/10.1119/1.18059">DOI 10.1119/1.18059</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Brownridge JD.</span> <i>When does hot water freeze faster than cold water? A search for the Mpemba effect.</i> American Journal of Physics <b>79</b>(1):78–84 (2011).
+        <div class="links"><a href="https://pubs.aip.org/aapt/ajp/article/79/1/78/1041776/When-does-hot-water-freeze-faster-then-cold-water">AIP 文章页</a><span class="acc a-snip">摘要+检索片段</span><span class="note">DOI 未独立核验，故不列出</span></div>
+      </li>
+      <li>
+        <span class="ttl">Vynnycky M, Kimura S.</span> <i>Can natural convection alone explain the Mpemba effect?</i> International Journal of Heat and Mass Transfer <b>80</b>:243–255 (2015).
+        <div class="links"><a class="doi" href="https://doi.org/10.1016/j.ijheatmasstransfer.2014.09.015">DOI 10.1016/j.ijheatmasstransfer.2014.09.015</a><span class="acc a-sec">二手转述</span></div>
+      </li>
+      <li>
+        <span class="ttl">Burridge HC, Linden PF.</span> <i>Questioning the Mpemba effect: hot water does not cool more quickly than cold.</i> Scientific Reports <b>6</b>:37665 (2016).
+        <div class="links"><a href="https://www.nature.com/articles/srep37665">nature.com/articles/srep37665</a><span class="acc a-full">全文</span></div>
+      </li>
+      <li>
+        <span class="ttl">Burridge HC, Hallstadius O.</span> <i>Observing the Mpemba effect with minimal bias and the value of the Mpemba effect to scientific outreach and engagement.</i> Proceedings of the Royal Society A <b>476</b>(2241):20190829 (2020).
+        <div class="links"><a class="doi" href="https://royalsocietypublishing.org/doi/10.1098/rspa.2019.0829">DOI 10.1098/rspa.2019.0829</a><span class="acc a-meta">元数据/摘要（全文 403）</span></div>
+      </li>
+      <li>
+        <span class="ttl">Ghosh S, Pathak P, Chatterjee S, Das SK.</span> <i>Simulations of Mpemba effect in water and Lennard-Jones models.</i> Communications Physics <b>8</b>(1) (2025-08-29).
+        <div class="links"><a href="https://www.nature.com/articles/s42005-025-02251-6">nature.com/articles/s42005-025-02251-6</a><span class="acc a-full">全文</span><span class="note">作者/卷期经 Crossref·OpenAlex 核对</span></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="refgroup">
+    <h3>B. 受控物理实验（非水体系）</h3>
+    <ol class="refs" start="8">
+      <li>
+        <span class="ttl">Kumar A, Bechhoefer J.</span> <i>Exponentially faster cooling in a colloidal system.</i> Nature <b>584</b>:64–68 (2020).
+        <div class="links"><a href="https://doi.org/10.1038/s41586-020-2560-x">DOI 10.1038/s41586-020-2560-x</a><a href="https://arxiv.org/abs/2008.02373">arXiv:2008.02373</a><span class="acc a-full">全文</span></div>
+      </li>
+      <li>
+        <span class="ttl">Kumar A, Bechhoefer J.</span> <i>Anomalous heating in a colloidal system.</i> PNAS <b>119</b>(5):e2118484119 (2022).
+        <div class="links"><a href="https://doi.org/10.1073/pnas.2118484119">DOI 10.1073/pnas.2118484119</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Aharony Shapira S, Shapira Y, Markov J, Teza G, Akerman N, Raz O, Ozeri R.</span> <i>Inverse Mpemba Effect Demonstrated on a Single Trapped Ion Qubit.</i> Physical Review Letters <b>133</b>(1):010403 (2024).
+        <div class="links"><a href="https://doi.org/10.1103/PhysRevLett.133.010403">DOI 10.1103/PhysRevLett.133.010403</a><a href="https://arxiv.org/abs/2401.05830">arXiv:2401.05830</a><span class="acc a-full">全文</span></div>
+      </li>
+      <li>
+        <span class="ttl">Zhang J, Xia G, Wu C-W, Chen T, Zhang Q, Xie Y, Su W-B, Wu W, Qiu C-W, Chen P-X, Li W, Jing H, Zhou Y-L.</span> <i>Observation of quantum strong Mpemba effect.</i> Nature Communications <b>16</b>:301 (2025).
+        <div class="links"><a href="https://www.nature.com/articles/s41467-024-54303-0">nature.com/articles/s41467-024-54303-0</a><a href="https://arxiv.org/abs/2401.15951">arXiv:2401.15951</a><span class="acc a-full">全文</span></div>
+      </li>
+      <li>
+        <span class="ttl">Xu Y, et al.</span> <i>Observation and Modulation of the Quantum Mpemba Effect on a Superconducting Quantum Processor.</i> Physical Review Letters (2026)；预印本 2025.
+        <div class="links"><a href="https://arxiv.org/abs/2508.07707">arXiv:2508.07707</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Chaddah P, Dash S, Kumar K, Banerjee A.</span> <i>Overtaking while approaching equilibrium.</i> arXiv:1011.3598（预印本）.
+        <div class="links"><a href="https://arxiv.org/abs/1011.3598">arXiv:1011.3598</a><span class="acc a-full">全文（预印本）</span><span class="note">未经同行评议状态需自行确认</span></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="refgroup">
+    <h3>C. 模拟与其他材料体系</h3>
+    <ol class="refs" start="14">
+      <li>
+        <span class="ttl">Baity-Jesi M, Calore E, Cruz A, et al.</span> <i>The Mpemba effect in spin glasses is a persistent memory effect.</i> PNAS <b>116</b>(31):15350–15355 (2019).
+        <div class="links"><a href="https://doi.org/10.1073/pnas.1819803116">DOI 10.1073/pnas.1819803116</a><a href="https://arxiv.org/abs/1804.07569">arXiv:1804.07569</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Lasanta A, Vega Reyes F, Prados A, Santos A.</span> <i>When the Hotter Cools More Quickly: Mpemba Effect in Granular Fluids.</i> Physical Review Letters <b>119</b>:148001 (2017).
+        <div class="links"><a href="https://doi.org/10.1103/PhysRevLett.119.148001">DOI 10.1103/PhysRevLett.119.148001</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Biswas A, Prasad VV, Rajesh R.</span> <i>Mpemba effect in an anisotropically driven granular gas.</i> arXiv:2104.08730（CC BY）.
+        <div class="links"><a href="https://arxiv.org/html/2104.08730v1">arXiv:2104.08730 全文</a><span class="acc a-full">全文</span></div>
+      </li>
+      <li>
+        <span class="ttl">Ahn Y-H, Kang H, Koh D-Y, Lee H.</span> <i>Experimental verifications of Mpemba-like behaviors of clathrate hydrates.</i> Korean Journal of Chemical Engineering <b>33</b>(6):1903–1907 (2016).
+        <div class="links"><a href="https://doi.org/10.1007/s11814-016-0029-2">DOI 10.1007/s11814-016-0029-2</a><span class="acc a-snip">检索片段</span></div>
+      </li>
+      <li>
+        <span class="ttl">Hu C, Li J, Huang S, Li H, Luo C, Chen J, Jiang S, An L.</span> <i>Conformation Directed Mpemba Effect on Polylactide Crystallization.</i> Crystal Growth &amp; Design <b>18</b>(10):5757–5762 (2018).
+        <div class="links"><a href="https://doi.org/10.1021/acs.cgd.8b01250">DOI 10.1021/acs.cgd.8b01250</a><span class="acc a-abs">摘要</span></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="refgroup">
+    <h3>D. 理论框架</h3>
+    <ol class="refs" start="19">
+      <li>
+        <span class="ttl">Lu Z, Raz O.</span> <i>Nonequilibrium thermodynamics of the Markovian Mpemba effect and its inverse.</i> PNAS <b>114</b>(20):5083–5088 (2017).
+        <div class="links"><a href="https://doi.org/10.1073/pnas.1701264114">DOI 10.1073/pnas.1701264114</a><span class="acc a-abs">摘要</span></div>
+      </li>
+      <li>
+        <span class="ttl">Klich I, Raz O, Hirschberg O, Vucelja M.</span> <i>Mpemba Index and Anomalous Relaxation.</i> Physical Review X <b>9</b>:021060 (2019).
+        <div class="links"><a href="https://doi.org/10.1103/PhysRevX.9.021060">DOI 10.1103/PhysRevX.9.021060</a><span class="acc a-abs">摘要</span></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="refgroup">
+    <h3>E. 背景资料（未作为数据来源）</h3>
+    <ol class="refs" start="21">
+      <li>
+        <span class="ttl">Gijón A, Lasanta A, Hernández ER.</span> <i>Paths towards equilibrium in molecular systems: The case of water.</i> Physical Review E <b>100</b>:032103 (2019).
+        <div class="links"><a href="https://doi.org/10.1103/PhysRevE.100.032103">DOI 10.1103/PhysRevE.100.032103</a><span class="acc a-meta">元数据</span></div>
+      </li>
+      <li>
+        <span class="ttl">Jeng M.</span> <i>The Mpemba effect: When can hot water freeze faster than cold?</i> American Journal of Physics <b>74</b>:514 (2006).
+        <div class="links"><a href="https://doi.org/10.1119/1.2186331">DOI 10.1119/1.2186331</a><span class="acc a-meta">元数据（综述，未抽取）</span></div>
+      </li>
+      <li>
+        <span class="ttl">Baez J.</span> <i>Can hot water freeze faster than cold water?</i>（科普综述网页）
+        <div class="links"><a href="https://math.ucr.edu/home/baez/physics/General/hot_water.html">math.ucr.edu/…/hot_water.html</a><span class="acc a-meta">非同行评议</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:8px">
+      <b>一致性自查</b>：证据矩阵 20 条记录 ↔ 参考文献 23 条（1:1 对应 E01–E20，另含 3 条背景）；文中每个数字均可在 <code>search-log.md</code> 的抽取记录中回溯；E06 因全文不可达而未给出任何方向判定；覆盖范围限制见 §7。
+    </p>
+    <p style="margin:0">
+      生成于 2026-09-17 · 检索与抽取：AnySearch（web / academic 垂直检索 / URL 全文抽取 / Crossref·OpenAlex 元数据核对）·
+      本页为科研文献信息整理，不构成工程或医疗建议。所有外部内容均按不可信来源处理，仅作数据使用。
+    </p>
+  </div>
+</footer>
+
+<a class="top" href="#top">↑ 回到顶部</a>
+</body>
+</html>
